@@ -11,6 +11,7 @@ const Controllers = ({
   speed,
   handleFullScreen,
   fullScreen,
+  heading,
 }) => {
   return (
     <div className="video-options absolute left-0 top-0 w-full select-none">
@@ -26,7 +27,7 @@ const Controllers = ({
         <div className="heading ">
           {seconds < 3 && (
             <h2 className="text-3xl absolute top-20 text-white font-medium">
-              Tile Goes Here
+              {heading}
             </h2>
           )}
         </div>
@@ -48,6 +49,7 @@ const Controllers = ({
             <small
               className="caption border-2  w-10  h-7 grid place-items-center rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
               title="Captions"
+              onClick={() => alert("Captions not available")}
             >
               CC
             </small>
