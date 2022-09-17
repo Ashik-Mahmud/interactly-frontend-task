@@ -37,8 +37,6 @@ const Video = () => {
     }
   }, [currentTime, duration]);
 
-  console.log(progress);
-
   /* All Organized Time */
   const minutes = Math.floor(currentTime / 60);
   const seconds = Math.floor(currentTime % 60);
@@ -68,7 +66,7 @@ const Video = () => {
       {!isPlaying && (
         <div className="play-btn absolute z-50 cursor-pointer">
           <button
-            className="play-btn-icon bg-white rounded-full w-16 h-16 grid place-items-center text-4xl"
+            className="play-btn-icon bg-[#ffffffa4] rounded-full w-20 h-20 grid place-items-center text-5xl"
             onClick={handlePlayBtn}
           >
             {isPlaying ? <BsFillPauseFill /> : <BsPlayFill />}

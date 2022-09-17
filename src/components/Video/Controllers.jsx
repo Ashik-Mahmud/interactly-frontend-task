@@ -20,13 +20,15 @@ const Controllers = ({
       {/* controls options  */}
       <div className="controls flex justify-between pt-10 px-10 z-20 relative">
         <div className="heading ">
-          <h2 className="text-3xl absolute top-20 text-white font-medium">
-            Tile Goes Here
-          </h2>
+          {seconds < 3 && (
+            <h2 className="text-3xl absolute top-20 text-white font-medium">
+              Tile Goes Here
+            </h2>
+          )}
         </div>
         <div className="control-options flex items-center gap-4 cursor-pointer">
           {/* durations  */}
-          <div className="durations text-white ">
+          <div className="durations text-white " title="Times">
             <span className="current-time">
               {minutes || " 00 "}:{(seconds < 10 && "0" + seconds) || " 00 "}
             </span>{" "}
@@ -40,7 +42,7 @@ const Controllers = ({
           {/* captions  */}
           <div className="captions">
             <small
-              className="caption border-2  w-10  h-7 grid place-items-center rounded-md hover:bg-white hover:text-black text-white font-bold"
+              className="caption border-2  w-10  h-7 grid place-items-center rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
               title="Captions"
             >
               CC
@@ -48,14 +50,17 @@ const Controllers = ({
           </div>
           {/* speed */}
           <div className="speed">
-            <small className="speed-icon border-2 w-10  h-7 grid place-items-center  rounded-md hover:bg-white hover:text-black text-white font-bold">
+            <small
+              className="speed-icon border-2 w-10  h-7 grid place-items-center  rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
+              title="Speed"
+            >
               1x
             </small>
           </div>
           {/* screen */}
           <div className="screen">
             <small
-              className="screen-icon border-2 w-10  h-7 grid place-items-center   text-lg rounded-md hover:bg-white hover:text-black text-white font-bold"
+              className="screen-icon border-2 w-10  h-7 grid place-items-center   text-lg rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
               title="Full screen"
             >
               <AiOutlineFullscreen />
