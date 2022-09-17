@@ -35,13 +35,15 @@ const Controllers = ({
           {/* durations  */}
           <div className="durations text-white " title="Times">
             <span className="current-time">
-              {minutes || " 00 "}:{(seconds < 10 && "0" + seconds) || " 00 "}
+              {minutes || " 00 "}:
+              {(seconds < 10 ? "0" + seconds : seconds) || " 00 "}
             </span>{" "}
             /
             <span className="total-time">
               {" "}
               {totalMinutes || " 00 "}:
-              {(totalSeconds < 10 && "0" + totalSeconds) || " 00 "}
+              {(totalSeconds < 10 ? "0" + totalSeconds : totalSeconds) ||
+                " 00 "}
             </span>
           </div>
           {/* captions  */}

@@ -18,6 +18,7 @@ const Video = ({ heading, src }) => {
   const handlePlayBtn = () => {
     setInterval(() => {
       setCurrentTime(videoRef.current.currentTime);
+      setDuration(videoRef.current.duration);
     }, 1200);
     videoRef.current.play();
     setIsPlaying(true);
