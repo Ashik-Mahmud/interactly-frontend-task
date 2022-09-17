@@ -9,6 +9,7 @@ const Video = () => {
   const [duration, setDuration] = useState(0);
   const [progress, setProgress] = useState(0);
   const [speed, setSpeed] = useState(1);
+  const [fullScreen, setFullScreen] = useState(false);
 
   /* get video object */
   const videoRef = useRef(null);
@@ -61,8 +62,17 @@ const Video = () => {
     }
   };
 
+  /* Handle Full Screen Mode */
+  const handleFullScreen = () => {
+    setFullScreen((prevState) => !prevState);
+  };
+
   return (
-    <div className="h-screen  border relative flex-1 grid place-items-center">
+    <div
+      className={`h-screen  ${
+        fullScreen ? " w-screen fixed" : "flex-1 relative"
+      } border  grid place-items-center `}
+    >
       <Controllers
         minutes={minutes}
         seconds={seconds}
@@ -71,6 +81,8 @@ const Video = () => {
         progress={progress}
         handleSpeedButton={handleSpeedButton}
         speed={speed}
+        handleFullScreen={handleFullScreen}
+        fullScreen={fullScreen}
       />
       {/* play btn  */}
 

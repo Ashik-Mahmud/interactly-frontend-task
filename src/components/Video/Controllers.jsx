@@ -1,5 +1,5 @@
 import React from "react";
-import { AiOutlineFullscreen } from "react-icons/ai";
+import { BiExitFullscreen, BiFullscreen } from "react-icons/bi";
 
 const Controllers = ({
   minutes,
@@ -9,6 +9,8 @@ const Controllers = ({
   progress,
   handleSpeedButton,
   speed,
+  handleFullScreen,
+  fullScreen,
 }) => {
   return (
     <div className="video-options absolute left-0 top-0 w-full select-none">
@@ -63,10 +65,11 @@ const Controllers = ({
           {/* screen */}
           <div className="screen">
             <small
+              onClick={handleFullScreen}
               className="screen-icon border-2 w-10  h-7 grid place-items-center   text-lg rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
               title="Full screen"
             >
-              <AiOutlineFullscreen />
+              {fullScreen ? <BiExitFullscreen /> : <BiFullscreen />}
             </small>
           </div>
         </div>
