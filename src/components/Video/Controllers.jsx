@@ -7,9 +7,11 @@ const Controllers = ({
   totalMinutes,
   totalSeconds,
   progress,
+  handleSpeedButton,
+  speed,
 }) => {
   return (
-    <div className="video-options absolute left-0 top-0 w-full">
+    <div className="video-options absolute left-0 top-0 w-full select-none">
       {/* progressbar  */}
       <div className="progressbar -top-1 w-full h-3 bg-gray-500 relative cursor-move z-10 ">
         <small
@@ -51,10 +53,11 @@ const Controllers = ({
           {/* speed */}
           <div className="speed">
             <small
+              onClick={handleSpeedButton}
               className="speed-icon border-2 w-10  h-7 grid place-items-center  rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
               title="Speed"
             >
-              1x
+              {speed}x
             </small>
           </div>
           {/* screen */}

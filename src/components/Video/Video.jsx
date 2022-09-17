@@ -8,6 +8,7 @@ const Video = () => {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [speed, setSpeed] = useState(1);
 
   /* get video object */
   const videoRef = useRef(null);
@@ -43,6 +44,23 @@ const Video = () => {
   const totalMinutes = Math.floor(duration / 60);
   const totalSeconds = Math.floor(duration % 60);
 
+  /* Handle Speed Button */
+
+  const handleSpeedButton = () => {
+    const speedArray = [1, 1.25, 1.5, 1.75, 2];
+
+    const currentSpeedIndex = speedArray.indexOf(speed);
+    const nextSpeedIndex = currentSpeedIndex + 1;
+    const nextSpeed = speedArray[nextSpeedIndex];
+    if (nextSpeed) {
+      setSpeed(nextSpeed);
+      videoRef.current.playbackRate = nextSpeed;
+    } else {
+      setSpeed(1);
+      videoRef.current.playbackRate = 1;
+    }
+  };
+
   return (
     <div className="h-screen  border relative flex-1 grid place-items-center">
       <Controllers
@@ -51,6 +69,8 @@ const Video = () => {
         totalMinutes={totalMinutes}
         totalSeconds={totalSeconds}
         progress={progress}
+        handleSpeedButton={handleSpeedButton}
+        speed={speed}
       />
       {/* play btn  */}
 
