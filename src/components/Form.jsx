@@ -1,7 +1,7 @@
 import React from "react";
 import { BsArrowDownRight } from "react-icons/bs";
 
-const SignUpForm = () => {
+const Form = () => {
   return (
     <div className="p-10 bg-white z-50 sm:px-24 w-full h-screen sm:h-auto fixed  left-0 top-0 sm:relative">
       <form action="">
@@ -55,4 +55,4 @@ const SignUpForm = () => {
   );
 };
 
-export default SignUpForm;
+export default Form;
