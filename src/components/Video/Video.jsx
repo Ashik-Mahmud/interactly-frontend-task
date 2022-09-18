@@ -95,8 +95,6 @@ const Video = ({ heading, src }) => {
         ref={videoRef}
         onClick={handlePlayBtn}
         onEnded={() => setIsPlaying(false)}
-        lazy={true}
-        preload="auto"
       >
         <source src={src} />
       </video>

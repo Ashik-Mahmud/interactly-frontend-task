@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <>
       <Fade top distance="20px">
-        <section className="home-page sm:flex justify-between overflow-y-hidden">
+        <section className="home-page sm:flex justify-between overflow-y-hidden h-screen">
           <Video
             heading={"Welcome"}
             src={
