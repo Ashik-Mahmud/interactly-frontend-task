@@ -18,7 +18,6 @@ const Video = ({ heading, src }) => {
   const handlePlayBtn = () => {
     setInterval(() => {
       setCurrentTime(videoRef.current.currentTime);
-      setDuration(videoRef.current.duration);
     }, 1200);
     videoRef.current.play();
     setIsPlaying(true);
@@ -46,8 +45,7 @@ const Video = ({ heading, src }) => {
   const totalMinutes = Math.floor(duration / 60);
   const totalSeconds = Math.floor(duration % 60);
 
-  /* Handle Speed Button */
-
+  /* Handle Playback Speed Button */
   const handleSpeedButton = () => {
     const speedArray = [1, 1.25, 1.5, 1.75, 2];
 

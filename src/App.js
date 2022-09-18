@@ -1,10 +1,9 @@
-import Structure from "./pages/Structure";
-
+import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-       {/* <Home /> */}
-       <Structure />
+       <Home />
+       {/* <Structure /> */}
     </div>
   );
 }
