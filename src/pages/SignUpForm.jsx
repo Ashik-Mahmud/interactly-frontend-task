@@ -23,8 +23,16 @@ const SignUpForm = () => {
         </div>
 
         <div className="input-group flex items-start mt-9 gap-3">
-          <input type="checkbox" name="" className="text-2xl" id="" />
-          <label htmlFor="" className="text-base leading-relaxed text-gray-600">
+          <input
+            type="checkbox"
+            name=""
+            style={{ width: "20px", height: "20px" }}
+            id="condition"
+          />
+          <label
+            htmlFor="condition"
+            className="text-base leading-relaxed text-gray-600"
+          >
             * [Sample legal text] The personal data you have provided will be
             processed by XXXXX for purposes of providing you the service. The
             legal basis of the processing is XXXXX. Your data will not be
