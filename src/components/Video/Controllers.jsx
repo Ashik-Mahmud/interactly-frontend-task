@@ -1,5 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { BiExitFullscreen, BiFullscreen } from "react-icons/bi";
+import { GoMute, GoUnmute } from "react-icons/go";
 
 const Controllers = ({
   minutes,
@@ -15,6 +16,8 @@ const Controllers = ({
   duration,
   videoRef,
 }) => {
+  const [mute, setMute] = useState(false);
+
   /* Handle Progressbar Forward Backward */
   const progressRef = useRef(null);
 
@@ -22,6 +25,17 @@ const Controllers = ({
     const width = progressRef.current.clientWidth;
     const clientX = event.clientX;
     videoRef.current.currentTime = (clientX / width) * duration;
+  };
+
+  /* Handle Mute/Unmute */
+  const handleMute = () => {
+    if (videoRef.current.muted) {
+      videoRef.current.muted = false;
+      setMute(false);
+    } else {
+      videoRef.current.muted = true;
+      setMute(true);
+    }
   };
 
   return (
@@ -79,6 +93,16 @@ const Controllers = ({
               title="Speed"
             >
               {speed}x
+            </small>
+          </div>
+          {/* Muted */}
+          <div className="speed">
+            <small
+              onClick={handleMute}
+              className="speed-icon border-2 w-10 text-lg  h-7 grid place-items-center  rounded-md hover:bg-white duration-75 hover:scale-110 hover:text-black text-white font-bold"
+              title={mute ? "Unmute" : "Mute"}
+            >
+              {mute ? <GoMute /> : <GoUnmute />}
             </small>
           </div>
           {/* screen */}

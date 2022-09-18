@@ -32,10 +32,7 @@ const SignUp = () => {
                 dispatch(setForm({ coaching: false, signUp: true }))
               }
             >
-              <SecondaryButton
-                handleNavigateSignUpForm={"handleNavigateSignUpForm"}
-                className="btn"
-              >
+              <SecondaryButton className="btn">
                 Sign Up for free Webinar
               </SecondaryButton>
             </div>
