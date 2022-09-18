@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { BiExitFullscreen, BiFullscreen } from "react-icons/bi";
 
 const Controllers = ({
@@ -12,13 +12,28 @@ const Controllers = ({
   handleFullScreen,
   fullScreen,
   heading,
+  duration,
+  videoRef,
 }) => {
+  /* Handle Progressbar Forward Backward */
+  const progressRef = useRef(null);
+
+  const handleProgressbar = (event) => {
+    const width = progressRef.current.clientWidth;
+    const clientX = event.clientX;
+    videoRef.current.currentTime = (clientX / width) * duration;
+  };
+
   return (
     <div className="video-options absolute left-0 top-0 w-full select-none">
       {/* progressbar  */}
-      <div className="progressbar -top-1 w-full h-3 bg-gray-500 relative cursor-move z-10 ">
+      <div
+        onClick={handleProgressbar}
+        ref={progressRef}
+        className="progressbar -top-1 w-full h-3 bg-gray-500 relative cursor-pointer z-50 duration-75 hover:h-5"
+      >
         <small
-          className="progress absolute h-full grid place-items-center bg-violet-700 left-0 top-0"
+          className="progress absolute h-full grid cursor-pointer place-items-center bg-violet-700 left-0 top-0"
           style={{ width: progress + "%" }}
         ></small>
       </div>

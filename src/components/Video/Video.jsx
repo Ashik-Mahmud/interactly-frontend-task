@@ -16,10 +16,6 @@ const Video = ({ heading, src }) => {
 
   /* Handle Play Pause Button */
   const handlePlayBtn = () => {
-    setInterval(() => {
-      setCurrentTime(videoRef.current.currentTime);
-    }, 1200);
-
     videoRef.current.play();
     setIsPlaying(true);
 
@@ -31,6 +27,10 @@ const Video = ({ heading, src }) => {
 
   /* Get and Handle Durations  */
   useEffect(() => {
+    setInterval(() => {
+      setCurrentTime(videoRef.current?.currentTime);
+      setDuration(videoRef.current?.duration);
+    }, 1200);
     setProgress((currentTime / duration) * 100);
     setDuration(videoRef.current.duration);
     if ((currentTime / duration) * 100 === 100) {
@@ -85,6 +85,8 @@ const Video = ({ heading, src }) => {
         handleFullScreen={handleFullScreen}
         fullScreen={fullScreen}
         heading={heading}
+        duration={duration}
+        videoRef={videoRef}
       />
       {/* play btn  */}
 
@@ -93,6 +95,8 @@ const Video = ({ heading, src }) => {
         ref={videoRef}
         onClick={handlePlayBtn}
         onEnded={() => setIsPlaying(false)}
+        lazy={true}
+        preload="auto"
       >
         <source src={src} />
       </video>
