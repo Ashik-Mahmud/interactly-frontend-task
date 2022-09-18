@@ -14,7 +14,7 @@ This is interactly frontend position task for the position of frontend developer
 
 ## How to run
 
-Click On it To Run Live [Link](https://interactly-task.netlify.app/)
+# Live [Link](https://interactly-frontend-task.netlify.app/)
 
 ## Preview Screenshot
 
