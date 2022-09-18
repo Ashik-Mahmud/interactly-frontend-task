@@ -2,15 +2,22 @@
 
 ## Introduction
 
-This is interactly frontend position task for the position of frontend developer. The task is to create a simple web application that allows users to create and manage their own todo lists. The application should be built using React and Redux. The application should be able to run on the latest version of Chrome and Firefox.
+This is interactly frontend position task for the position of frontend developer.
 
-## Requirements
+## Technologies
 
-- The application should be built using React and Redux.
-- The application should be able to run on the latest version of Chrome and Firefox.
-- The application should be able to run on the latest version of Node.js.
-- The application should be able to run on the latest version of npm.
+- React
+- Redux
+- React Animations
+- React Icons
+- Tailwind CSS
 
-## Instructions
+## How to run
 
-- Fork this repository.
+Click On it To Run Live [Link](https://interactly-task.netlify.app/)
+
+## Preview Screenshot
+
+![ImageScreenshot](./preview.png)
+
+> Thanks for reaching out to me. I hope you like my work. If you have any questions or suggestions, please feel free to contact me.
