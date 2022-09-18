@@ -19,6 +19,7 @@ const Video = ({ heading, src }) => {
     setInterval(() => {
       setCurrentTime(videoRef.current.currentTime);
     }, 1200);
+
     videoRef.current.play();
     setIsPlaying(true);
 
@@ -52,6 +53,7 @@ const Video = ({ heading, src }) => {
     const currentSpeedIndex = speedArray.indexOf(speed);
     const nextSpeedIndex = currentSpeedIndex + 1;
     const nextSpeed = speedArray[nextSpeedIndex];
+
     if (nextSpeed) {
       setSpeed(nextSpeed);
       videoRef.current.playbackRate = nextSpeed;
@@ -69,7 +71,7 @@ const Video = ({ heading, src }) => {
   return (
     <div
       className={`h-screen  ${
-        fullScreen ? " w-screen fixed" : "flex-1 relative"
+        fullScreen ? " w-screen fixed z-50" : "flex-1 relative"
       } border  grid place-items-center `}
     >
       <Controllers

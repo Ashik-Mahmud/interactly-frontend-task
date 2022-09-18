@@ -3,7 +3,7 @@ import { BsArrowDownRight } from "react-icons/bs";
 
 const SignUpForm = () => {
   return (
-    <div className="p-10 px-24">
+    <div className="p-10 bg-white z-50 sm:px-24 w-full h-screen sm:h-auto fixed  left-0 top-0 sm:relative">
       <form action="">
         <h3 className="text-2xl font-medium">
           Before you go, please leave your contact details so we can get back to
@@ -31,7 +31,7 @@ const SignUpForm = () => {
           />
           <label
             htmlFor="condition"
-            className="text-base leading-relaxed text-gray-600"
+            className="text-sm h-28 overflow-auto sm:h-auto sm:overflow-hidden sm:text-base leading-relaxed text-gray-600"
           >
             * [Sample legal text] The personal data you have provided will be
             processed by XXXXX for purposes of providing you the service. The

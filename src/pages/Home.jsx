@@ -28,6 +28,7 @@ const Home = () => {
       />
     );
   }
+
   if (navigate === "funnel2") {
     return (
       <Structure

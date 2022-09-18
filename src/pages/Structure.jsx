@@ -14,7 +14,9 @@ const Structure = ({ src, btnText, head }) => {
     <section className="home-page sm:flex justify-between overflow-y-hidden">
       <Video heading={head} src={src} />
 
-      <div className="home-content  absolute w-full bottom-20 pl-3 sm:relative flex-1 grid items-center justify-center">
+      <div
+        className={`home-content  absolute w-full bottom-20 pl-3 sm:relative flex-1 grid items-center justify-center`}
+      >
         {navigate ? (
           <SignUpForm />
         ) : (
