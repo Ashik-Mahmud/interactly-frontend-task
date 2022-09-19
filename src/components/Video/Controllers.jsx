@@ -3,10 +3,7 @@ import { BiExitFullscreen, BiFullscreen } from "react-icons/bi";
 import { GoMute, GoUnmute } from "react-icons/go";
 
 const Controllers = ({
-  minutes,
-  seconds,
-  totalMinutes,
-  totalSeconds,
+  currentTime,
   progress,
   handleSpeedButton,
   speed,
@@ -37,6 +34,12 @@ const Controllers = ({
       setMute(true);
     }
   };
+
+  /* All Organized Time */
+  const minutes = Math.floor(currentTime / 60);
+  const seconds = Math.floor(currentTime % 60);
+  const totalMinutes = Math.floor(duration / 60);
+  const totalSeconds = Math.floor(duration % 60);
 
   return (
     <div className="video-options absolute left-0 top-0 w-full select-none">

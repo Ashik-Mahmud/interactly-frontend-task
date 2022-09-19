@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { BsFillPauseFill, BsPlayFill } from "react-icons/bs";
 import Controllers from "./Controllers";
 import Logo from "./Logo";
+
 const Video = ({ heading, src }) => {
   /* operations of Video Controllers  */
   const [isPlaying, setIsPlaying] = useState(false);
@@ -31,20 +32,16 @@ const Video = ({ heading, src }) => {
       setCurrentTime(videoRef.current?.currentTime);
       setDuration(videoRef.current?.duration);
     }, 1200);
+
     setProgress((currentTime / duration) * 100);
     setDuration(videoRef.current.duration);
+
     if ((currentTime / duration) * 100 === 100) {
       setIsPlaying(false);
       videoRef.current.currentTime = 0;
       videoRef.current.pause();
     }
   }, [currentTime, duration]);
-
-  /* All Organized Time */
-  const minutes = Math.floor(currentTime / 60);
-  const seconds = Math.floor(currentTime % 60);
-  const totalMinutes = Math.floor(duration / 60);
-  const totalSeconds = Math.floor(duration % 60);
 
   /* Handle Playback Speed Button */
   const handleSpeedButton = () => {
@@ -75,10 +72,7 @@ const Video = ({ heading, src }) => {
       } border  grid place-items-center `}
     >
       <Controllers
-        minutes={minutes}
-        seconds={seconds}
-        totalMinutes={totalMinutes}
-        totalSeconds={totalSeconds}
+        currentTime={currentTime}
         progress={progress}
         handleSpeedButton={handleSpeedButton}
         speed={speed}
